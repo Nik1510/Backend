@@ -6,18 +6,21 @@ dotenv.config({
     path:'./env'
 })
 
-connectDB();
-
-
-
-
-
-
-
-
-
-
-
+connectDB()
+// when-ever Async method is completed it return a promise 
+.then(()=>{
+    
+    const server = app.listen(process.env.PORT || 8000, ()=>{
+        console.log(`Server is runnung at port : ${process.env.PORT}`)
+    })
+    server.on("error",(err)=>{
+        console.error("An error occurred while starting the server",err);
+        
+    })
+})
+.catch((err)=>{
+    console.log("MONGO DB connection failed !!!",err)
+})
 
 
 

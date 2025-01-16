@@ -7,10 +7,12 @@ const connectDB = async() =>{
             MONGODB_URI}/${DB_NAME}`)
             console.log(`\n MongoDB connected !! DB HOST: 
                 ${connectionInstance.connection.host}`)
+                console.log(connectionInstance)
     } catch (error) {
         console.log("MONGODB connection error ", error)
         process.exit(1)
     }
 }
 
+// when-ever Async method is completed it return a promise 
 export default connectDB;
