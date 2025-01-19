@@ -38,6 +38,7 @@ connectDB()
 import express from "express"
 const app = express()
 
+// IIFE is used 
 (async ()=>{
     try{
         await mongoose.connect(`${process.env.MONGODB_URI}/$
