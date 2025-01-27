@@ -2,9 +2,11 @@
 // i.) Try - catch process 
 // ii.) promise 
 
-const asyncHandler = (requestHandler)=>{
-    Promise.resolve(requestHandler(req,res,next)).catch((err)=>
-    next(err)) 
+const asyncHandler = (requestHandler) => {
+    return (req, res, next) => {
+        Promise.resolve(requestHandler(req, res, next))
+        .catch((err) => next(err))
+    }
 }
 
  
