@@ -48,11 +48,9 @@ import userRouter from './routes/user.routes.js'
 
 // app.use("/users",userRouter)
 // // this helps to create link like this 
-// // https://localhost:8000/users/routers
+// // http://localhost:8000/users/routers
 // // so that you donot need to import every time 
 console.log("✅ Registering user routes...");
-app.use("/api/v1/users", userRouter); // https://localhost:8000/api/v1/users/register
+app.use("/api/v1/users", userRouter); // http://localhost:8000/api/v1/users/register
 console.log("✅ User routes registered.");
-
-
 export {app};
