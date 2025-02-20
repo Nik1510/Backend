@@ -1,5 +1,4 @@
 import {v2 as cloudinary} from 'cloudinary'
-import exp from 'constants';
 import fs from "fs" // it is fileSystem it is inbuilt function for js 
 
 cloudinary.config({ 
@@ -22,7 +21,8 @@ const uploadOnCloudinary = async (localFilePath)=>{
             resource_type:"auto"
         })
         // file has beem uploaded successfully 
-        console.log("file is uploaded in cloudinary ",response.url)
+        // console.log("file is uploaded in cloudinary ",response.url)
+        fs.unlinkSync(localFilePath)
         return response;
 
     } catch (error) {

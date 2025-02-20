@@ -10,14 +10,14 @@ router.get("/test", (req, res) => {
 router.route("/register").post(
     upload.fields([
         {
-            name:"avator",
+            name:"avatar",
             maxCount:1
         },
         {
             name:"coverImage",
             maxCount:1
         }
-    ])
+    ]),
     registerUser
 )
 
