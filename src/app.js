@@ -31,7 +31,7 @@ app.use(express.static("public"))
 
 // This middleware parses cookies from incoming
 //  requests and makes them available in req.cookies.
-app.use(cookieParser())
+app.use(cookieParser()) // cookies can be accessed two ways 
 
 // ----till here we just set up the backend project----
 
