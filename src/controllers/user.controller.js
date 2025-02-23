@@ -167,7 +167,9 @@ const logoutUser = asyncHandler(async(req,res)=>{
     // so we design are now cookies 
     await User.findByIdAndUpdate(
         req.user._id,
-        {
+        { 
+            //$set is a MongoDB operator that modifies specific fields in the document —
+            //  without overwriting the entire document
             $set:{
                 refreshToken:undefined
             }
@@ -183,8 +185,8 @@ const logoutUser = asyncHandler(async(req,res)=>{
 
     return res
     .status(200)
-    .clearCoolie("accessToken",options)
-    .clearCoolie("refreshToken",options)
+    .clearCookie("accessToken",options)
+    .clearCookie("refreshToken",options)
     .json(new ApiResponse(200,"User loggedOut Successfully"))
     
 })
